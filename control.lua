@@ -5,15 +5,12 @@ script.on_configuration_changed(function()
 	global.unit_spawners = global.unit_spawners or {}
 
 	-- See issue #1
-	if not global.fixed_leak then
-		for unit_number, unit in pairs(global.unit_spawners) do
-			if unit.valid then
-				script.register_on_entity_destroyed(unit)
-			else
-				global.unit_spawners[unit_number] = nil
-			end
+	for unit_number, unit in pairs(global.unit_spawners) do
+		if unit.valid then
+			script.register_on_entity_destroyed(unit)
+		else
+			global.unit_spawners[unit_number] = nil
 		end
-		global.fixed_leak = true
 	end
 end)
 
