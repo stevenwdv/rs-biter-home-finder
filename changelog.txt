@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2023-03-06
+  Bugfixes:
+    - Fixed that despawned biters and biters killed by scripts were still kept track of, increasing memory/storage use
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2022-08-18
   Changes:
