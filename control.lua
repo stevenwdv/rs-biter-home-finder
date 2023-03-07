@@ -58,5 +58,7 @@ script.on_event(defines.events.on_entity_spawned,
 script.on_event(defines.events.on_entity_destroyed,
 	---@param event on_entity_destroyed
 	function(event)
-		global.unit_spawners[event.unit_number] = nil
+		if event.unit_number then
+			global.unit_spawners[event.unit_number] = nil
+		end
 	end)
