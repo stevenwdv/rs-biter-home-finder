@@ -1,9 +1,9 @@
-script.on_configuration_changed(function()
-	---@type table<uint,uint64>
-	global.unit_lines = global.unit_lines or {}
-	---@type table<uint,LuaEntity>
-	global.unit_spawners = global.unit_spawners or {}
+---@type table<uint,uint64>
+global.unit_lines = global.unit_lines or {}
+---@type table<uint,LuaEntity>
+global.unit_spawners = global.unit_spawners or {}
 
+script.on_configuration_changed(function()
 	-- See issue #1
 	for unit_number, unit in pairs(global.unit_spawners) do
 		if unit.valid then
